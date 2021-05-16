@@ -17,7 +17,7 @@ namespace AttendanceApp.Controllers
 		// GET: Account
 		public ActionResult Login(string returnUrl)
 		{
-
+			//Este es un comentario de prueba
 			string AdminEmail = ConfigurationManager.AppSettings["AdminEmail"].ToString();
 			string Password = ConfigurationManager.AppSettings["Password"].ToString();
 
