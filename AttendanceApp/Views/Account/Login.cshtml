@@ -8,35 +8,85 @@
 
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-		<h2>Login</h2>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="contenedor">
+    <div class="row">
+        <div class="col-md-6" style="background-color:blueviolet;padding-bottom:33%; color:white; margin-left:-8%;">
+            <br />
+            <div class="col-md-offset-2">
+                <img width="20%" src="https://play-lh.googleusercontent.com/-CvY0c-MmYQf2xaJQ6TVj_PZO4lpKG3T-i78UOolkpMxwlUen3KsakPA7I8OOwjOx_Q=s128" alt="Codigo Qr" />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
-        </div>
+            <div class="col-md-offset-2" style="margin-top:15%">
+                
+                <h1 class="text-white bg-darkr">Bienvenid@s</h1>
+                <p class="text-white">Sistema de Asistencia Virtual</p>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
             </div>
+
         </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="col-md-6">
+                <br />
+                <div class="pull-right">
+                    <span>Todavía no tengo una cuenta?</span> &nbsp;
+                    <a href="" class="">Registrate!</a>
+                </div><br /><br />
+                <div class="form-horizontal">
+                    <h2 class="text-center">Acceso</h2>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-8" })
+                        <div class="col-md-offset-4 col-md-8">
+                            <br />
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-8" })
+                        <div class="col-md-offset-4 col-md-8">
+                            <br />
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a href="#" class="btn">Olvido Password?</a>
+                            <input type="submit" value="Acceso" class="btn btn-primary pull-right btn-lg" />
+                        </div>
+                    </div>
+                    <div class="form-group ">
+
+                        <h6 class="text-center"> OR                        </h6> <br />
+                        <div class="col-md-offset-2 col-md-12">
+                            <div class="col-md-3">
+
+                                <a href="#" class="btn btn-primary btn-lg btn-block">Facebook</a>
+                            </div>
+                            <div class="col-md-3">
+
+                                <a href="#" class="btn btn-info btn-lg btn-block">Twitter</a>
+                            </div>
+                            <div class="col-md-3">
+
+                                <a href="#" class="btn btn-danger btn-lg btn-block">Google </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+
     </div>
-}
 
+</div>
