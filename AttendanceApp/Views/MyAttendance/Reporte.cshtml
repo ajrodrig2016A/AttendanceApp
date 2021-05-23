@@ -1,0 +1,100 @@
+﻿@model IEnumerable<AttendanceApp.Models.Attendance>
+@using AttendanceApp.Models;
+
+
+
+
+@{
+
+
+    List<Employee> Employees = TempData["Employees"] as List<Employee>;
+    string startDate = TempData["Start"] as string;
+    string endDate = TempData["end"] as string;
+
+}
+
+<h2 class="text-center text-primary">Reporte Asistencia</h2>
+
+
+
+<table class="table" style="margin-top:10px;">
+    <tr>
+        <th>
+            Empleados
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComingTime)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveTime)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfDay)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @DispayEmployee(item.EmployeeID)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeaveTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfDay)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $(".datapiker").datetimepicker({
+                format: 'd/m/Y'
+            });
+        });
+
+    </script>
+}
+
+@helper  DispayEmployee(int userID)
+{
+
+
+    List<Employee> Employees = TempData["EmployeesNames"] as List<Employee>;
+    string username = "";
+
+    foreach (var E in Employees)
+    {
+
+        if (E.ID == userID)
+        {
+            username = E.FirstName + " " + E.LastName;
+
+        }
+    }
+
+
+    <span>
+        @username
+
+    </span>
+
+
+}

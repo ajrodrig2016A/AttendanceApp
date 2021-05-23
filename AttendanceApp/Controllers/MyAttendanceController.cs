@@ -9,7 +9,7 @@ using AttendanceApp.DAL;
 using AttendanceApp.Models;
 using Newtonsoft.Json;
 using PagedList;
-
+using Rotativa;
 
 namespace AttendanceApp.Controllers
 {
@@ -192,6 +192,30 @@ namespace AttendanceApp.Controllers
 			return RedirectToAction("All");
 		}
 
+		public ActionResult Print()
+		{
+			return new ActionAsPdf("Reporte", new { nombre = "Juan" }) { FileName = "Reporte_Asistencia.pdf" };
+		}
+
+		public ActionResult Reporte(int? page)
+		{
+			List<Employee> Employees = db.Employee.ToList();
+			List<Attendance> attendanceList = db.Attendance.ToList();
+			List<SelectListItem> listDD = new List<SelectListItem>();
+
+			foreach (var e in Employees)
+			{
+				listDD.Add(new SelectListItem
+				{
+					Value = e.ID.ToString(),
+					Text = e.FirstName + e.LastName
+				});
+
+			}
+			TempData["Employees"] = listDD;
+			TempData["EmployeesNames"] = Employees;
+			return View(attendanceList);
+		}
 
 
 	}
