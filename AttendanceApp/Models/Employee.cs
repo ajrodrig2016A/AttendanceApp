@@ -9,16 +9,16 @@ namespace AttendanceApp.Models
 	public class Employee
 	{
 		public int ID { get; set; }
-		[Display(Name = "First Name")]
+		[Display(Name = "Nombres")]
 		public string FirstName { get; set; }
 
-		[Display(Name = "Last Name")]
+		[Display(Name = "Apellidos")]
 		public string LastName { get; set; }
 
-		[Display(Name = "Salary")]
+		[Display(Name = "Sueldo")]
 		public decimal salary { get; set; }
 
-		[Display(Name = "Birth Day")]
+		[Display(Name = "Cumpleaños")]
 		public DateTime BirthDate { get; set; }
 
 
@@ -34,13 +34,13 @@ namespace AttendanceApp.Models
 		public string Password { get; set; }
 
 		[DataType(DataType.Password)]
-		[Display(Name = "Confirm password")]
+		[Display(Name = "Confirmar password")]
 		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }
 
 
 
-		[Display(Name = "UserRoles")]
+		[Display(Name = "Rol")]
 		public string UserRoles { get; set; }
 
 

@@ -34,7 +34,8 @@ namespace AttendanceApp.Controllers
 
 
 			Employee userinfo = JsonConvert.DeserializeObject<Employee>(User.Identity.Name);
-			DateTime todayDate = Convert.ToDateTime(DateTime.Now.ToString("MM-dd-yyyy"));
+			//cambio el formato de la fecha
+			DateTime todayDate = Convert.ToDateTime(DateTime.Now.ToString("dd-MM-yyyy"));
 			bool AttendanceValid = db.Attendance.Any(c => c.DateOfDay == todayDate && c.EmployeeID == userinfo.ID);
 			
 			if (AttendanceValid == true)
@@ -66,9 +67,9 @@ namespace AttendanceApp.Controllers
 
 
 			
-			DateTime myDateTime = Convert.ToDateTime(DateTime.Now.ToString("MM-dd-yyyy HH:mm:ss"));
+			DateTime myDateTime = Convert.ToDateTime(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"));
 
-			DateTime todayDate = Convert.ToDateTime(DateTime.Now.ToString("MM-dd-yyyy"));
+			DateTime todayDate = Convert.ToDateTime(DateTime.Now.ToString("dd-MM-yyyy"));
 
 
 
@@ -98,7 +99,7 @@ namespace AttendanceApp.Controllers
 				{
 					EmployeeID = userID,
 					ComingTime = myDateTime,
-					DateOfDay = Convert.ToDateTime(DateTime.Now.ToString("MM-dd-yyyy")),
+					DateOfDay = Convert.ToDateTime(DateTime.Now.ToString("dd-MM-yyyy")),
 				
 				};
 				
