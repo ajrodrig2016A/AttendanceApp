@@ -27,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Attendance", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -39,8 +39,9 @@
 							if (userinfo.UserRoles == "Admin")
 							{
 
-								<li>@Html.ActionLink("Employees", "Index", "Employees")</li>
-								<li>@Html.ActionLink("Attendance", "All", "MyAttendance")</li>
+								<li>@Html.ActionLink("Empleados", "Index", "Employees")</li>
+								<li>@Html.ActionLink("Asistencias", "All", "MyAttendance")</li>
+                                <li>@Html.ActionLink("Reportes","")</li>
 							}
 							else
 							{
@@ -58,7 +59,7 @@
 					
 				
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-					<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+					<li>@Html.ActionLink("Contactos", "Contact", "Home")</li>
 
 
                 </ul>

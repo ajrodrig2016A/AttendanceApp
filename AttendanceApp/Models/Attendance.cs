@@ -13,7 +13,7 @@ namespace AttendanceApp.Models
 		public DateTime ComingTime { get; set; }
 
 
-		[DisplayName("Date")]
+		[DisplayName("Fecha")]
 		public DateTime DateOfDay { get; set; }
 
 		public DateTime? LeaveTime { get; set; }

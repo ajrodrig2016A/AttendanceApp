@@ -17,7 +17,7 @@
 
 }
 
-<h2>Attendance</h2>
+<h2 class="text-center text-primary">Asistencia</h2>
 
 
 
@@ -28,7 +28,7 @@
 	<div class="row">
 		<div class="form-group">
 			<div class="col-md-12">
-				Select Employee
+				Seleccionar Empleado 
 			</div>
 			</div>
 		</div>
@@ -38,21 +38,21 @@
 				<div class="col-md-3">
 					@Html.DropDownList("Employee",
 						(IEnumerable<SelectListItem>)TempData["Employees"],
-						"All Employee",
+						"Todos los Empleado",
 						new { @class = "form-control", onchange = "this.form.submit();" })
 				</div>
 				<div class="col-md-3">
-					<input id="start" name="start" class="form-control datapiker" placeholder="Start" value="@startDate" />
+					<input id="start" name="start" class="form-control datapiker" placeholder="Inicio" value="@startDate" />
 					
 					</div>
 				<div class="col-md-3">
 
-					<input class="form-control datapiker"  id="end" name="end" placeholder="End" value="@endDate" />
+					<input class="form-control datapiker"  id="end" name="end" placeholder="Fin" value="@endDate" />
 				</div>
 
 				<div class="col-md-3">
-
-					<input type="submit" value="Search" class="btn btn-default" />
+					<button type="submit" class="btn btn-info glyphicon glyphicon-search"> Buscar</button>
+				<!--<span class="glyphicon glyphicon.search"></span>	<input type="submit" value="Buscar" class="btn btn-info glyphicon glyphicon-search" />-->
 					</div>
 
 
@@ -81,7 +81,7 @@
 						@Html.DisplayNameFor(model => model.LeaveTime)
 					</th>
 					<th>
-						Employee Name
+						Nombres de Empleados
 						</th>
 <th></th>
 				</tr>
@@ -106,9 +106,9 @@
 						<td>
 							
 
-							@Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+							@Html.ActionLink("-Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-success btn-lg glyphicon glyphicon-edit" }) |
 						
-							@Html.ActionLink("Delete", "Delete", new { id = item.ID })
+							@Html.ActionLink("-Delete", "Delete", new { id = item.ID },new { @class= "btn btn-danger glyphicon glyphicon-trash" })
 						</td>
 					</tr>
 				}

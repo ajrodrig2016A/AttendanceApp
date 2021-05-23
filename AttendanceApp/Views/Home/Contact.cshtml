@@ -1,9 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Formulario de Contacto";
 }
-<h2>@ViewBag.Title.</h2>
+<h2 class="text-center text-info">@ViewBag.Title</h2>
 
-
+<!--
 <address>
 <b>Attendance Application</b> <br />
     <abbr title="Phone">Phone :</abbr>
@@ -14,3 +14,58 @@
     <strong>Support:</strong>   <a href="mailto:ahmedfrontend@gmail.com">ahmedfrontend@gmail.com</a><br />
     <strong>My WebSite:</strong> <a href="http://www.ahmedfrontend.com" target="_blank">www.ahmedfrontend.com</a>
 </address>
+    -->
+
+<div class="container" style="background-image:url('https://play-lh.googleusercontent.com/-CvY0c-MmYQf2xaJQ6TVj_PZO4lpKG3T-i78UOolkpMxwlUen3KsakPA7I8OOwjOx_Q=s128')">
+
+    <div class="row" style="padding-bottom:65px;">
+        <h2 class="text-center text-white"></h2> 
+        <div class="col-md-10">
+            
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+            <div class="form-horizontal col-md-offset-4 col-md-8" style="background:white; margin-top:10px;">
+                <div class="form-control" style="margin-top:10px;">
+                    <div class="col-md-2">
+                        <label class="control-label">Nombres:</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="text" name="name" class="form-inline" />
+                    </div>
+                </div>
+                <div class="form-control" style="margin-top:10px;">
+                    <div class="col-md-2">
+                        <label class="control-label">Correo:</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="email" name="email" />
+                    </div>
+                </div>
+                <div class="form-control" style="margin-top:10px;">
+                    <div class="col-md-2">
+                        <label class="control-label">Celular:</label>
+                    </div>
+                    <div class="col-md-10">
+                        <input type="number" name="phone" />
+                    </div>
+                </div>
+                <div class="form-control" style="margin-top:10px;">
+                    
+                        <label class="control-label">Mensaje:</label>
+                    
+                    
+                        <textarea class="form-control" style="margin-top:5px"  rows="7" cols="10">
+                       </textarea>
+                   
+                </div>
+                <div class="col-md-6" style="margin-top:180px; margin-left:50px;padding-bottom:20px;">
+                    <input type="submit" value="Enviar" class="btn btn-lg btn-danger"/>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+
+</div>
